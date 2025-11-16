@@ -1,0 +1,20 @@
+[
+  {
+    "id": 101,
+    "name": "Usain Bolt",
+    "sport": "Sprinting",
+    "country": "Jamaica"
+  },
+  {
+    "id": 102,
+    "name": "Simone Biles",
+    "sport": "Gymnastics",
+    "country": "USA"
+  },
+  {
+    "id": 103,
+    "name": "Katie Taylor",
+    "sport": "Boxing",
+    "country": "Ireland"
+  }
+]

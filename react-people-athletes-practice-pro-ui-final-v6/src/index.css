@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #0f172a 0%, #111827 140px, #e5e7eb 140px, #f3f4f6 100%);
+  color: #111827;
+}
+
+/* Overall app shell */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  padding: 1.1rem 1.5rem 1rem;
+  background: #020617;
+  color: #f9fafb;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header-title {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+}
+
+.app-header-subtitle {
+  display: none; /* kept for completeness but hidden visually */
+}
+
+/* Main content area */
+.app-main {
+  flex: 1;
+  max-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 2.5rem;
+}
+
+.app-main-title {
+  font-size: 1.25rem;
+  margin: 0 0 1.25rem;
+  text-align: center;
+  color: #111827;
+}
+
+/* Navigation bar */
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: flex-start;
+  margin-bottom: 1.75rem;
+}
+
+.nav-button {
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.nav-button span.icon {
+  font-size: 1rem;
+}
+
+.nav-button:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.nav-button.active {
+  background: #2563eb;
+  color: #f9fafb;
+  border-color: #2563eb;
+}
+
+/* Card layout */
+.card {
+  background: white;
+  border-radius: 0.9rem;
+  padding: 1.35rem 1.6rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  border: 1px solid #e5e7eb;
+  margin-inline: auto;
+  max-width: 860px;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+/* Two-column layout helper */
+.card-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+/* Stacks & forms */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+label {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+input {
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.45rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+button {
+  align-self: flex-start;
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.chip-button {
+  margin-left: 0.5rem;
+  padding-inline: 0.8rem;
+}
+
+/* Status, errors, special text */
+.status-text {
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.error-text {
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* Footer */
+.app-footer {
+  background: #020617;
+  color: #9ca3af;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  border-top: 1px solid #020617;
+}
+
+/* Dark mode: applied when root has class "app-shell dark" */
+.app-shell.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.app-shell.dark .app-header {
+  background: #020617;
+  color: #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+}
+
+.app-shell.dark .app-main-title {
+  color: #e5e7eb;
+}
+
+.app-shell.dark .card {
+  background: #020617;
+  border-color: #1f2937;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.85);
+}
+
+.app-shell.dark .card p {
+  color: #d1d5db;
+}
+
+.app-shell.dark .nav-button {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #374151;
+}
+
+.app-shell.dark .nav-button:hover {
+  background: #111827;
+}
+
+.app-shell.dark .nav-button.active {
+  background: #2563eb;
+  color: #f9fafb;
+}
+
+.app-shell.dark input {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #374151;
+}
+
+.app-shell.dark button {
+  background: #2563eb;
+}
+
+.app-shell.dark .app-footer {
+  background: #020617;
+  color: #9ca3af;
+  border-top-color: #020617;
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "age": 28,
+    "city": "Dublin"
+  },
+  {
+    "id": 2,
+    "name": "Maria Finn",
+    "age": 34,
+    "city": "Cork"
+  },
+  {
+    "id": 3,
+    "name": "Leo O'Brien",
+    "age": 19,
+    "city": "Galway"
+  }
+]
